@@ -1,0 +1,11 @@
+facility_id,facility_name,region,facility_type,capacity_index,demand_index,opened_date
+F01,Cedar Valley Medical Center,West,Acute care hospital,0.88,0.95,2016-01-01
+F02,Harborview Community Hospital,West,Community hospital,0.93,0.97,2016-01-01
+F03,Pine Ridge Medical Center,Midwest,Acute care hospital,0.98,1.0,2016-01-01
+F04,Lakeside General Hospital,Midwest,Community hospital,1.04,0.92,2016-01-01
+F05,Summit Regional Hospital,Mountain,Acute care hospital,1.09,0.95,2016-01-01
+F06,Riverbend Community Hospital,South,Community hospital,1.15,0.97,2016-01-01
+F07,Oakfield Medical Center,South,Acute care hospital,1.21,1.0,2016-01-01
+F08,Northgate General Hospital,Northeast,Community hospital,1.26,0.92,2016-01-01
+F09,Meadowbrook Regional Hospital,Northeast,Acute care hospital,1.31,0.95,2016-01-01
+F10,Eastpoint Community Hospital,East,Community hospital,1.37,0.97,2016-01-01

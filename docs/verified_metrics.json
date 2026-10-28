@@ -1,0 +1,29 @@
+{
+  "period": [
+    "2024-01-01",
+    "2025-12-31"
+  ],
+  "rows": {
+    "dim_date": 731,
+    "dim_department": 5,
+    "dim_employee": 1750,
+    "dim_facility": 10,
+    "dim_role": 4,
+    "dim_shift": 3,
+    "fact_operational_incidents": 8153,
+    "fact_patient_demand_daily": 36550,
+    "fact_shift_assignments": 643219,
+    "fact_shift_coverage": 109650
+  },
+  "coverage_pct": 99.5729998071802,
+  "undercoverage_pct": 42.234382124943,
+  "uncovered_hours": 317507.6,
+  "overtime_pct": 3.164754588288445,
+  "overtime_labor_cost_usd": 9100149.27,
+  "incident_count": 8153,
+  "incidents_per_1000_shifts": 74.3547651618787,
+  "northgate_night_scheduled_coverage_pct": 93.8686376994914,
+  "northgate_night_worked_coverage_pct": 88.48941063140086,
+  "northgate_jan2025_patient_days": 11224,
+  "northgate_jan2025_coverage_pct": 90.71060359801055
+}

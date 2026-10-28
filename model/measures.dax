@@ -1,0 +1,98 @@
+-- Table: fact_shift_coverage
+[Required Staff Hours] =
+SUM ( fact_shift_coverage[required_staff_hours] )
+
+-- Table: fact_shift_coverage
+[Worked Staff Hours] =
+SUM ( fact_shift_coverage[worked_staff_hours] )
+
+-- Table: fact_shift_coverage
+[Coverage %] =
+DIVIDE ( [Worked Staff Hours], [Required Staff Hours] )
+
+-- Table: fact_shift_coverage
+[Uncovered Staff Hours] =
+SUMX (
+    fact_shift_coverage,
+    MAX (
+        0,
+        fact_shift_coverage[required_staff_hours]
+            - fact_shift_coverage[worked_staff_hours]
+    )
+)
+
+-- Table: fact_shift_coverage
+[Department Shifts] =
+COUNTROWS ( fact_shift_coverage )
+
+-- Table: fact_shift_coverage
+[Undercovered Department Shifts] =
+COUNTROWS (
+    FILTER (
+        fact_shift_coverage,
+        fact_shift_coverage[worked_staff_hours]
+            < fact_shift_coverage[required_staff_hours]
+    )
+)
+
+-- Table: fact_shift_coverage
+[Undercovered Shifts %] =
+DIVIDE (
+    [Undercovered Department Shifts],
+    [Department Shifts]
+)
+
+-- Table: fact_shift_coverage
+[Overtime Hours] =
+SUM ( fact_shift_coverage[overtime_hours] )
+
+-- Table: fact_shift_coverage
+[Overtime %] =
+DIVIDE ( [Overtime Hours], [Worked Staff Hours] )
+
+-- Table: fact_shift_coverage
+[Overtime Labor Cost] =
+SUM ( fact_shift_coverage[overtime_labor_cost_usd] )
+
+-- Table: fact_shift_coverage
+[Scheduled Staff Hours] =
+SUM ( fact_shift_coverage[scheduled_staff_hours] )
+
+-- Table: fact_shift_coverage
+[Absence Hours] =
+SUM ( fact_shift_coverage[absence_hours] )
+
+-- Table: fact_shift_coverage
+[Absence %] =
+DIVIDE ( [Absence Hours], [Scheduled Staff Hours] )
+
+-- Table: fact_shift_coverage
+[Scheduled Coverage %] =
+DIVIDE ( [Scheduled Staff Hours], [Required Staff Hours] )
+
+-- Table: fact_patient_demand_daily
+[Patient Days] =
+SUM ( fact_patient_demand_daily[patient_census] )
+
+-- Table: fact_patient_demand_daily
+[Average Daily Census] =
+DIVIDE (
+    [Patient Days],
+    DISTINCTCOUNT ( dim_date[date] )
+)
+
+-- Table: fact_shift_coverage
+[Regular Worked Hours] =
+[Worked Staff Hours] - [Overtime Hours]
+
+-- Table: fact_operational_incidents
+[Incident Count] =
+COUNTROWS ( fact_operational_incidents )
+
+-- Table: fact_operational_incidents
+[Incidents per 1,000 Department Shifts] =
+DIVIDE (
+    [Incident Count],
+    [Department Shifts]
+) * 1000
+

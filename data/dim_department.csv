@@ -1,0 +1,6 @@
+department_id,department_name,acuity_multiplier
+ED,Emergency,1.32
+ICU,Intensive Care,1.58
+MED,Medical-Surgical,1.0
+SURG,Surgical,1.14
+OBS,Observation,0.87

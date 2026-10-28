@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Expanded copy of the compressed assignment data
+data/fact_shift_assignments.csv

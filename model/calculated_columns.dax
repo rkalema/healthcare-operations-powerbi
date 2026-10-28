@@ -1,0 +1,8 @@
+-- Table: dim_date
+[Month Start] =
+DATE (
+    YEAR ( dim_date[date] ),
+    MONTH ( dim_date[date] ),
+    1
+)
+

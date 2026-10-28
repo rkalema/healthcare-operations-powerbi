@@ -1,0 +1,5 @@
+role_id,role_name,base_hourly_rate_usd
+RN,Registered Nurse,43
+LPN,Licensed Practical Nurse,31
+CNA,Nursing Assistant,22
+TECH,Patient Care Technician,26
